@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Hassan Murtaza - Landing Page</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Blanka&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #001523 0%, #002945 100%);
-            color: #fff;
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: #0a0907;
+            color: #f2efeb;
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,25 +20,103 @@
             height: 100vh;
             flex-direction: column;
             text-align: center;
-            animation: gradientBG 20s ease infinite;
-            background-size: 400% 400%;
             overflow: hidden;
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 25px;
+            color: #f2efeb;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
         }
-        @keyframes fadeInScale {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+
+        .greeting {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #f2efeb;
+            margin-bottom: 10px;
+            animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid #f2efeb; /* Cursor */
         }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #f2efeb; }
+        }
+
+        p {
+            font-size: 16px;
+            margin: 0 20px;
+            max-width: 800px;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .highlight {
+            background: linear-gradient(90deg, #c9bdae, #3f5f47);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            animation: gradientShift 5s linear infinite;
+            background-size: 200% 200%;
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #669989;
+            text-decoration: none;
+            font-size: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-10px);
+        }
+
+        .social-links a:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .fluid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+            filter: blur(30px);
+            mix-blend-mode: overlay;
+            transition: transform 0.1s ease;
+        }
+
         @keyframes gradientShift {
             0% {
                 background-position: 0% 0%;
@@ -50,89 +127,6 @@
             100% {
                 background-position: 0% 0%;
             }
-        }
-        h1 {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-family: 'Blanka', sans-serif;
-            font-size: 25px; /* 50% of the original 50px size */
-            color: #fff;
-            margin: 0;
-            letter-spacing: 2px; /* Added letter-spacing */
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Added drop shadow */
-        }
-        .greeting {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 10px;
-            animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 4px solid #fff; /* Cursor */
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: #fff; }
-        }
-        p {
-            font-size: 16px;
-            margin: 0 20px;
-            max-width: 800px;
-            animation: fadeInScale 1s ease-out;
-        }
-        .highlight {
-            background: linear-gradient(90deg, #00c6ff, #ffdf00);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-            animation: gradientShift 5s linear infinite;
-            background-size: 200% 200%;
-        }
-        .social-links {
-            position: absolute;
-            bottom: 60px; /* Adjusted to make room for the footer */
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .social-links a {
-            color: #77A2DD;
-            text-decoration: none;
-            font-size: 30px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .social-links a:hover {
-            color: #1a73e8;
-            transform: translateY(-10px);
-        }
-        .social-links a:active {
-            transform: translateY(0);
-        }
-        footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-        .fluid-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
-            filter: blur(30px);
-            mix-blend-mode: overlay;
-            transition: transform 0.1s ease;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -162,13 +156,12 @@
             { text: "こんにちは!", duration: 3000 },
             { text: "नमस्ते!", duration: 3000 },
             { text: "مرحبا!", duration: 3000 },
-            { text: "مرحبا!", duration: 3000 },
             { text: "ہیلو!", duration: 3000 }
         ];
 
         let index = 0;
         let typingInterval;
-        
+
         function typeGreeting(greeting) {
             const greetingElement = document.getElementById('greeting');
             let charIndex = 0;
@@ -220,3 +213,4 @@
     </script>
 </body>
 </html>
+
